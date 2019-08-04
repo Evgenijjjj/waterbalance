@@ -1,0 +1,2 @@
+include ':app', ':fluid-slider2'
+project(':fluid-slider2').projectDir = new File('fluid-slider')

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F0F8FF</color>
+    <color name="colorPrimaryDark">#DCDCDC</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="textColoTheme">#2F3851</color>
+    <color name="textColorSecondaryTheme">#8995AC</color>
+    <color name="chartNotFilled">#307B68EE</color>
+    <color name="chartFilled">#7B68EE</color>
+    <color name="colorPrimaryDarkAlpha">#60DCDCDC</color>
+
+</resources>

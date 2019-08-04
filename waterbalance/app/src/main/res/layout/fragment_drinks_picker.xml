@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+    <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:gravity="top"
+            android:layout_gravity="bottom"
+            android:weightSum="4"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <include
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/drink_1"
+                layout="@layout/item_drink"
+        />
+
+        <include
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/drink_2"
+                layout="@layout/item_drink"
+        />
+
+        <include
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/drink_3"
+                layout="@layout/item_drink"
+        />
+
+        <include
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/drink_4"
+                layout="@layout/item_drink"
+        />
+
+    </LinearLayout>
+
+</FrameLayout>

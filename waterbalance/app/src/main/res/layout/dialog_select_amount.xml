@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+            android:id="@+id/btn_close"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="15dp"
+            android:src="@drawable/ic_close_selectable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tv_title"
+            android:layout_marginTop="10dp"
+            android:maxLines="1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Крепкий алкоголь"
+            android:textAppearance="@style/TitleTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tv_calculated_amount"
+            android:layout_marginTop="3dp"
+            android:maxLines="1"
+            android:textSize="14dp"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="- 72 мл"
+            android:textAppearance="@style/TitleTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/tv_formula"
+            android:layout_marginTop="3dp"
+            android:maxLines="1"
+            android:textSize="14dp"
+            android:textColor="?android:attr/textColorSecondary"
+            app:layout_constraintTop_toBottomOf="@id/tv_calculated_amount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="1 мл = -1,78"
+            android:textAppearance="@style/TitleTextAppearance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    <com.sdsmdg.harjot.crollerTest.Croller
+            app:layout_goneMarginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:focusableInTouchMode="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_formula"
+            app:layout_constraintBottom_toTopOf="@id/btn_add"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:id="@+id/croller"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:back_circle_color="?colorAccent"
+            app:indicator_color="?colorAccent"
+            app:indicator_width="10"
+            app:label=""
+            app:is_continuous="false"
+            app:label_color="#000000"
+            app:main_circle_color="#FFFFFF"
+            app:max="50"
+            app:progress_primary_color="?colorAccent"
+            app:progress_secondary_color="?colorPrimaryDark"
+            android:layout_marginTop="8dp"/>
+
+    <TextView
+            android:id="@+id/tv_value"
+            android:textColor="?colorAccent"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            tools:text="2,04 л"
+            app:layout_constraintStart_toStartOf="@+id/croller"
+            app:layout_constraintEnd_toEndOf="@+id/croller"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/croller" app:layout_constraintTop_toTopOf="@+id/croller"
+    />
+
+    <TextView
+            android:layout_marginBottom="50dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="8dp"
+            android:text="Добавить"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:background="@drawable/rounded_green_selector"
+            android:id="@+id/btn_add"
+            android:layout_width="180dp"
+            android:layout_height="40dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

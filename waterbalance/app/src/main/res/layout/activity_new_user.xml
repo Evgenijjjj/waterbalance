@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+            segmentedgroup:titleTextAppearance="@style/TitleTextAppearance"
+            segmentedgroup:title="@string/calculate_water_norm"
+            android:background="?android:colorBackground"
+            android:elevation="4dp"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"/>
+
+    <androidx.core.widget.NestedScrollView
+            android:overScrollMode="never"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:id="@+id/tv_value"
+                    android:textColor="?colorAccent"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textSize="30dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintBottom_toTopOf="@id/segments"
+                    tools:text="2,04 л"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            <View
+                    segmentedgroup:layout_constraintStart_toStartOf="@id/segments"
+                    segmentedgroup:layout_constraintEnd_toEndOf="@id/segments"
+                    segmentedgroup:layout_constraintTop_toTopOf="@id/segments"
+                    segmentedgroup:layout_constraintBottom_toBottomOf="@id/segments"
+                    android:background="@drawable/rounded_primary_dark_background"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
+
+            <info.hoang8f.android.segmented.SegmentedGroup
+                    android:layout_marginTop="60dp"
+                    segmentedgroup:layout_constraintStart_toStartOf="parent"
+                    segmentedgroup:layout_constraintEnd_toEndOf="parent"
+                    segmentedgroup:layout_constraintTop_toBottomOf="@id/tv_value"
+                    android:id="@+id/segments"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    segmentedgroup:sc_border_width="0dp"
+                    segmentedgroup:sc_tint_color="?colorAccent"
+                    segmentedgroup:sc_checked_text_color="@android:color/white"
+                    segmentedgroup:sc_corner_radius="40dp">
+
+                <RadioButton
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="bold"
+                        android:id="@+id/female"
+                        style="@style/RadioButton"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/female"/>
+
+                <RadioButton
+                        android:fontFamily="sans-serif-medium"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:id="@+id/male"
+                        style="@style/RadioButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/male"/>
+
+            </info.hoang8f.android.segmented.SegmentedGroup>
+
+            <TextView
+                    android:layout_marginBottom="8dp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    segmentedgroup:layout_constraintStart_toStartOf="@id/segments"
+                    segmentedgroup:layout_constraintBottom_toTopOf="@id/segments"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="18dp"
+                    android:text="Пол"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                    android:id="@+id/_growth"
+                    android:layout_marginBottom="48dp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    segmentedgroup:layout_constraintStart_toStartOf="@id/segments"
+                    segmentedgroup:layout_constraintBottom_toBottomOf="@id/seekbar_growth"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="18dp"
+                    android:text="@string/growt_sm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.ramotion.fluidslider.FluidSlider
+                    android:id="@+id/seekbar_growth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    segmentedgroup:layout_constraintTop_toBottomOf="@id/segments"
+                    segmentedgroup:layout_constraintCircleRadius="20dp"
+                    segmentedgroup:size="small"
+                    segmentedgroup:bar_color="@color/colorPrimaryDark"
+                    segmentedgroup:bubble_color="@color/colorAccent"
+                    segmentedgroup:text_size="16dp"
+                    segmentedgroup:bubble_text_color="@android:color/white"
+                    segmentedgroup:bar_text_color="@color/colorPrimaryDark"
+                    app:duration="@android:integer/config_mediumAnimTime"/>
+
+            <TextView
+                    android:id="@+id/_weight"
+                    android:layout_marginBottom="48dp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    segmentedgroup:layout_constraintStart_toStartOf="@id/segments"
+                    segmentedgroup:layout_constraintBottom_toBottomOf="@id/seekbar_weight"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="18dp"
+                    android:text="@string/weight_kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.ramotion.fluidslider.FluidSlider
+                    android:id="@+id/seekbar_weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    segmentedgroup:layout_constraintTop_toBottomOf="@id/seekbar_growth"
+                    segmentedgroup:layout_constraintCircleRadius="20dp"
+                    segmentedgroup:size="small"
+                    segmentedgroup:bar_color="@color/colorPrimaryDark"
+                    segmentedgroup:bubble_color="@color/colorAccent"
+                    segmentedgroup:text_size="16dp"
+                    segmentedgroup:bubble_text_color="@android:color/white"
+                    segmentedgroup:bar_text_color="@color/colorPrimaryDark"
+                    app:duration="@android:integer/config_mediumAnimTime"/>
+
+
+            <TextView
+                    android:id="@+id/_age"
+                    android:layout_marginBottom="48dp"
+                    android:textColor="?android:attr/textColorSecondary"
+                    segmentedgroup:layout_constraintStart_toStartOf="@id/segments"
+                    segmentedgroup:layout_constraintBottom_toBottomOf="@id/seekbar_age"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:textSize="18dp"
+                    android:text="Возраст"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            <com.ramotion.fluidslider.FluidSlider
+                    android:id="@+id/seekbar_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    segmentedgroup:layout_constraintTop_toBottomOf="@id/seekbar_weight"
+                    segmentedgroup:layout_constraintCircleRadius="20dp"
+                    segmentedgroup:size="small"
+                    segmentedgroup:bar_color="@color/colorPrimaryDark"
+                    segmentedgroup:bubble_color="@color/colorAccent"
+                    segmentedgroup:text_size="16dp"
+                    segmentedgroup:bubble_text_color="@android:color/white"
+                    segmentedgroup:bar_text_color="@color/colorPrimaryDark"
+                    app:duration="@android:integer/config_mediumAnimTime"/>
+
+
+
+            <TextView
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginTop="40dp"
+                    segmentedgroup:layout_constraintStart_toStartOf="parent"
+                    segmentedgroup:layout_constraintEnd_toEndOf="parent"
+                    segmentedgroup:layout_constraintTop_toBottomOf="@id/seekbar_age"
+                    android:text="Продолжить"
+                    android:textColor="@android:color/white"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    segmentedgroup:layout_constraintBottom_toBottomOf="parent"
+                    android:background="@drawable/rounded_green_selector"
+                    android:id="@+id/btn_confirm"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
